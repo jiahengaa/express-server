@@ -6,6 +6,8 @@
 - 目前分为 session 登录和 token 登录
 - 页面为注册页，登录页，主页
 
+> 对应前端客户端 https://github.com/jiahengaa/vue-vuex-typescript-project
+
 > 目录及文件的改动，均含详细备注
 
 1. package.json 中的'dependencies'包含的是增加的 npm 包

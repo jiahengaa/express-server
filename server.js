@@ -15,6 +15,7 @@ const user = require('./server/router/user');
 
 // token机制的user
 const usertoken = require('./server-token/router/usertoken');
+const product = require('./server-token/router/product');
 
 const db = mongoose.connect(config.mongodb);
 // 数据库连接
@@ -46,7 +47,7 @@ app.use(express.static('dist'));
 
 app.use(
   cors({
-    origin: ['http://localhost:8080'],
+    origin: ['http://localhost:8081'],
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: false
@@ -73,6 +74,7 @@ app.use(
 app.use('/', index);
 app.use('/api', user);
 app.use('/api/token', usertoken);
+app.use('/api/product', product);
 
 app.listen(port, () => {
   console.log(`${pkg.name} listening on port ${port}`);
